@@ -1,0 +1,27 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<div th:replace="common/head::html"></div>
+ <div class="right">
+        <div class="location">
+            <strong>你现在所在的位置是:</strong>
+            <span>用户管理页面 >> 用户信息查看页面</span>
+        </div>
+        <div class="providerView">
+            <p><strong>用户编号：</strong><span th:text="${user.userCode }"></span></p>
+            <p><strong>用户名称：</strong><span th:text="${user.userName }"></span></p>
+            <p><strong>用户性别：</strong>
+				<span th:if="${user.gender eq 1}">男</span>
+				<span th:if="${user.gender eq 2}">女</span>
+			</p>
+            <p><strong>出生日期：</strong><span th:text="${#dates.format(user.birthday,'yyyy-MM-dd')}"></span></p>
+            <p><strong>用户电话：</strong><span th:text="${user.phone }"></span></p>
+            <p><strong>用户地址：</strong><span th:text="${user.address }"></span></p>
+            <p><strong>用户角色：</strong><span th:text="${user.userRoleName}"></span></p>
+			<div class="providerAddBtn">
+            	<input type="button" id="back" name="back" value="返回" >
+            </div>
+        </div>
+    </div>
+</section>
+<div th:replace="common/foot::html"></div>
+<script type="text/javascript" th:src="@{/js/userview.js}"></script>
+</html>

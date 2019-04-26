@@ -1,0 +1,27 @@
+spring:
+  mvc:
+#    view:
+#      suffix: .html
+#      prefix: /
+    favicon:
+      enabled: false #不要spring的小叶子
+  datasource:   #数据源
+    druid:
+      driver-class-name: com.mysql.cj.jdbc.Driver
+      url: jdbc:mysql://localhost:3306/smbms?serverTimezone=UTC
+      username: root
+      password: root
+      initial-size: 10      #初始化连接数
+      max-active: 200       #最大连接数
+      max-wait: 20          #最大等待时间
+      min-idle: 5           #最小空闲（保底的）
+      test-on-return: true  #归还链接时是否测试 链接正常
+      test-on-borrow: true  #使用链接时是否测试 链接正常 很重要
+  servlet:
+    multipart: #文件上传大小限制
+      enabled: true
+      max-file-size: 10MB      #单个文件大小
+      max-request-size: 100MB  #总文件大小
+#mybatis映射文件
+mybatis:
+  mapper-locations: classpath*:mapper/*.xml

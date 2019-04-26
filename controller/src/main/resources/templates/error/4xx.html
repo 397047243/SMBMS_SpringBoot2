@@ -1,0 +1,56 @@
+<html xmlns:th="http://www.thymeleaf.org">
+    <title>客户端异常</title>
+	<link rel="shortcut icon" type="image/x-icon" th:href="@{/images/favicon.ico}"/>
+    <style>
+        *{
+            margin: 0px;
+            padding:0px;
+        }
+        html,body{
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: radial-gradient(rgb(220, 230, 247),rgb(175,214,244));
+        }
+        p{
+            text-align: center;
+            line-height: 50px;
+            color:rgb(77,142,239);
+        }
+        .p{
+            margin: 70px;
+            height: 30px;
+            line-height: 30px;
+        }
+        .p>span{
+            display: inline-block;
+            margin: 0px 80px;
+            cursor: pointer;
+            font-size: 16px;
+            padding:0 0 0 30px;
+            height: 30px;
+        }
+        .p>span:first-of-type{
+            background: url(refresh.png) 5px 5px no-repeat;
+            background-size: 20px 20px;
+        }
+        .p>span:last-of-type{
+            background: url(return.png) 5px 5px no-repeat;
+            background-size: 20px 20px;
+        }
+        .p>span:hover{
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+<div>
+    <p style="font-size:80px;margin-bottom:100px;">o(╥﹏╥)o</p>
+    <p style="font-size:50px;color: #f00;" th:text="${status}"></p>
+    <p style="font-size:20px;" th:text="${message}"></p>
+    <p class="p"><span onclick="javascript:location.reload()">重新加载</span><span onclick="javascript:history.go(-1)">返回上一页</span></p>
+</div>
+</body>
+</html>

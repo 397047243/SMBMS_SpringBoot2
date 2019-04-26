@@ -1,0 +1,12 @@
+﻿<html xmlns:th="http://www.thymeleaf.org">
+<div th:replace="common/head::html"></div>
+    <div class="right">
+        <img class="wColck" th:src="@{/images/clock.jpg}"/>
+        <div class="wFont">
+            <h2 th:text="${userSession.userName }"></h2>
+            <p>欢迎来到超市订单管理系统!</p>
+        </div>
+    </div>
+</section>
+<div th:replace="common/foot::html"></div>
+</html>

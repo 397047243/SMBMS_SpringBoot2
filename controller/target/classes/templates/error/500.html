@@ -1,0 +1,68 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html  xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>系统出现错误了!o(╥﹏╥)o</title>
+	<link rel="shortcut icon" type="image/x-icon" th:href="@{/images/favicon.ico}"/>
+    <style>
+        *{
+            margin: 0px;
+            padding:0px;
+        }
+        html,body{
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: radial-gradient(rgb(220, 230, 247),rgb(175,214,244));
+        }
+        p{
+            text-align: center;
+            line-height: 30px;
+            color:rgb(77,142,239);
+        }
+        .p{
+            margin: 70px;
+            height: 30px;
+            line-height: 30px;
+        }
+        .p>span{
+            display: inline-block;
+            margin: 0px 80px;
+            cursor: pointer;
+            font-size: 16px;
+            padding:0 0 0 30px;
+            height: 30px;
+        }
+        .p>span:first-of-type{
+            background: url(refresh.png) 5px 5px no-repeat;
+            background-size: 20px 20px;
+        }
+        .p>span:last-of-type{
+            background: url(return.png) 5px 5px no-repeat;
+            background-size: 20px 20px;
+        }
+        .p>span:hover{
+            font-weight: bold;
+        }
+        #Detailed{
+			margin-top: 20px;
+            font-size: 14px;
+            cursor: pointer;
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+<div>
+    <p style="font-size:80px;margin-bottom:100px;">o(╥﹏╥)o</p>
+    <p style="font-size:50px;color: #f00;">500</p>
+    <p style="font-size:25px;margin-top: 30px;">系统出现错误了!</p>
+    <p id="Detailed" th:text="${message}"></p>
+    <p class="p"><span onclick="javascript:location.reload()">重新加载</span><span onclick="javascript:history.go(-1)">返回上一页</span></p>
+</div>
+</body>
+</html>
